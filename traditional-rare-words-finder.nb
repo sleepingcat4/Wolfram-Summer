@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[     27676,        675]
-NotebookOptionsPosition[     25713,        639]
-NotebookOutlinePosition[     26117,        655]
-CellTagsIndexPosition[     26074,        652]
+NotebookDataLength[     27698,        715]
+NotebookOptionsPosition[     25549,        677]
+NotebookOutlinePosition[     25953,        693]
+CellTagsIndexPosition[     25910,        690]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -576,65 +576,103 @@ Cell[BoxData[
   "Out[119]=",ExpressionUUID->"e7280ecc-facd-413f-8524-ce4326d47f9e"]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"GraphPlot", "[", "rareWords", "]"}]], "Input",
+ RowBox[{
+  RowBox[{"wordCounts", "=", 
+   RowBox[{"Counts", "[", "rareWords", "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.898082328195754*^9, 3.898082329112256*^9}, 
    3.898082600076*^9, 3.8980828686445866`*^9, 3.8980830077331343`*^9, {
-   3.898083047199418*^9, 3.898083054462476*^9}},
+   3.898083047199418*^9, 3.898083054462476*^9}, 3.8980833740608454`*^9, 
+   3.89808342102604*^9},
  CellLabel->
-  "In[124]:=",ExpressionUUID->"aa1b2991-d7bd-442f-b866-7f5ccf38251f"],
+  "In[126]:=",ExpressionUUID->"aa1b2991-d7bd-442f-b866-7f5ccf38251f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"matrixSize", "=", 
+   RowBox[{"Ceiling", "[", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"Length", "[", "wordCounts", "]"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"matrix", "=", 
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Values", "[", "wordCounts", "]"}], ",", "matrixSize"}], "]"}]}],
+   ";"}]}], "Input",
+ CellChangeTimes->{{3.898083429291452*^9, 3.8980834292924643`*^9}, 
+   3.8980834684939365`*^9, 3.8980835131542854`*^9, 3.8980835457158012`*^9},
+ CellLabel->
+  "In[131]:=",ExpressionUUID->"9611b5b3-b699-4cc6-b702-90803d4ef708"],
 
 Cell[BoxData[
- TemplateBox[{
-  "GraphPlot", "graph", 
-   "\"A graph object is expected at position \\!\\(\\*RowBox[{\\\"1\\\"}]\\) \
-in \\!\\(\\*RowBox[{\\\"GraphPlot\\\", \\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\
-\\\"\\\\\\\"ai\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"algorithms\\\\\\\"\\\", \\\
-\",\\\", \\\"\\\\\\\"americans\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"arab\\\\\\\
-\"\\\", \\\",\\\", \\\"\\\\\\\"arabia\\\\\\\"\\\", \\\",\\\", \
-\\\"\\\\\\\"attitudes\\\\\\\"\\\", \\\",\\\", \
-\\\"\\\\\\\"bangladesh\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"benefits\\\\\\\"\\\
-\", \\\",\\\", \\\"\\\\\\\"broader\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"canada\
-\\\\\\\"\\\", \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"46\\\", \\\"\
-\[RightSkeleton]\\\"}]}], \\\"}\\\"}], \\\"]\\\"}]\\).\"", 2, 124, 25, 
-   19208083360135520517, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.8980823316897907`*^9, 3.8980826024332247`*^9, 
-  3.8980828696467032`*^9, 3.898083008961817*^9, 3.8980830565812073`*^9},
+ RowBox[{
+  RowBox[{"reliefPlot", "=", 
+   RowBox[{"ReliefPlot", "[", 
+    RowBox[{"matrix", ",", 
+     RowBox[{"ColorFunction", "->", "\"\<SunsetColors\>\""}], ",", 
+     RowBox[{"FrameTicks", "->", 
+      RowBox[{"{", 
+       RowBox[{"None", ",", "Automatic"}], "}"}]}], ",", 
+     RowBox[{"ImageSize", "->", "500"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.89808348060942*^9, 3.898083480610321*^9}, 
+   3.898083563379713*^9},
  CellLabel->
-  "During evaluation of \
-In[124]:=",ExpressionUUID->"303893a5-8e63-4741-9860-e8a2b0752fce"],
+  "In[133]:=",ExpressionUUID->"9197ce53-f620-4c73-97bf-7ac61cc243a2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["reliefPlot"], "Input",
+ CellChangeTimes->{{3.8980835760042624`*^9, 3.8980835760042624`*^9}},
+ CellLabel->
+  "In[134]:=",ExpressionUUID->"9aa35b17-2279-4efd-9059-ca87fd5df6c5"],
 
 Cell[BoxData[
- RowBox[{"GraphPlot", "[", 
-  RowBox[{"{", 
-   RowBox[{"\<\"ai\"\>", ",", "\<\"algorithms\"\>", ",", "\<\"americans\"\>", 
-    ",", "\<\"arab\"\>", ",", "\<\"arabia\"\>", ",", "\<\"attitudes\"\>", 
-    ",", "\<\"bangladesh\"\>", ",", "\<\"benefits\"\>", 
-    ",", "\<\"broader\"\>", ",", "\<\"canada\"\>", ",", "\<\"chinese\"\>", 
-    ",", "\<\"citizens\"\>", ",", "\<\"countries\"\>", ",", "\<\"daniel\"\>", 
-    ",", "\<\"drawbacks\"\>", ",", "\<\"elaborating\"\>", 
-    ",", "\<\"emirates\"\>", ",", "\<\"eric\"\>", ",", "\<\"eu\"\>", 
-    ",", "\<\"henry\"\>", ",", "\<\"huttenlocher\"\>", 
-    ",", "\<\"including\"\>", ",", "\<\"india\"\>", ",", "\<\"ipsos\"\>", 
-    ",", "\<\"jumped\"\>", ",", "\<\"june\"\>", ",", "\<\"jurisdictions\"\>", 
-    ",", "\<\"kissinger\"\>", ",", "\<\"launched\"\>", ",", "\<\"laws\"\>", 
-    ",", "\<\"malaysia\"\>", ",", "\<\"mauritius\"\>", 
-    ",", "\<\"november\"\>", ",", "\<\"openai\"\>", ",", "\<\"others\"\>", 
-    ",", "\<\"passed\"\>", ",", "\<\"policies\"\>", ",", "\<\"poses\"\>", 
-    ",", "\<\"products\"\>", ",", "\<\"promoting\"\>", 
-    ",", "\<\"recommendations\"\>", ",", "\<\"released\"\>", 
-    ",", "\<\"responding\"\>", ",", "\<\"reuters\"\>", ",", "\<\"rights\"\>", 
-    ",", "\<\"risks\"\>", ",", "\<\"russian\"\>", ",", "\<\"saudi\"\>", 
-    ",", "\<\"schmidt\"\>", ",", "\<\"stanford\"\>", ",", "\<\"states\"\>", 
-    ",", "\<\"stating\"\>", ",", "\<\"strategies\"\>", 
-    ",", "\<\"superintelligence\"\>", ",", "\<\"tunisia\"\>", 
-    ",", "\<\"vietnam\"\>"}], "}"}], "]"}]], "Output",
- CellChangeTimes->{3.898083010419899*^9, 3.8980830565951233`*^9},
+ GraphicsBox[RasterBox[CompressedData["
+1:eJxTTMoPSmVmYGBgB2IOIAaxs3rSre/yfLCPfrOXM2DGXfuimjDlbRdW2Y+K
+j4qPio+Kj4rjFwcAVFaK5Q==
+   "], {{0, 0}, {8, 7}}],
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction:>$DisplayFunction,
+  Epilog->{},
+  FormatType:>TraditionalForm,
+  Frame->True,
+  FrameLabel->None,
+  FrameStyle->{},
+  FrameTicks->{{Automatic, Automatic}, {None, None}},
+  FrameTicksStyle->{},
+  GridLines->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->500,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->{All, All},
+  PlotRangeClipping->False,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->Automatic,
+  TicksStyle->{}]], "Output",
+ CellChangeTimes->{3.898083577030426*^9},
  CellLabel->
-  "Out[124]=",ExpressionUUID->"0288810b-f160-4b5e-b67d-9a747cbb6cd8"]
+  "Out[134]=",ExpressionUUID->"7aa11f78-710e-426f-8a31-f85b3eceb59e"]
 }, Open  ]]
 },
 WindowSize->{571.8, 509.4},
@@ -672,14 +710,14 @@ Cell[CellGroupData[{
 Cell[8482, 245, 223, 4, 28, "Input",ExpressionUUID->"eb46a5e5-e9ad-4369-966c-993ac5a212e5"],
 Cell[8708, 251, 13780, 324, 375, "Output",ExpressionUUID->"e7280ecc-facd-413f-8524-ce4326d47f9e"]
 }, Open  ]],
+Cell[22503, 578, 437, 9, 28, "Input",ExpressionUUID->"aa1b2991-d7bd-442f-b866-7f5ccf38251f"],
+Cell[22943, 589, 593, 15, 48, "Input",ExpressionUUID->"9611b5b3-b699-4cc6-b702-90803d4ef708"],
+Cell[23539, 606, 535, 13, 48, "Input",ExpressionUUID->"9197ce53-f620-4c73-97bf-7ac61cc243a2"],
 Cell[CellGroupData[{
-Cell[22525, 580, 340, 6, 28, "Input",ExpressionUUID->"aa1b2991-d7bd-442f-b866-7f5ccf38251f"],
-Cell[22868, 588, 1110, 19, 46, "Message",ExpressionUUID->"303893a5-8e63-4741-9860-e8a2b0752fce"],
-Cell[23981, 609, 1716, 27, 208, "Output",ExpressionUUID->"0288810b-f160-4b5e-b67d-9a747cbb6cd8"]
+Cell[24099, 623, 189, 3, 28, "Input",ExpressionUUID->"9aa35b17-2279-4efd-9059-ca87fd5df6c5"],
+Cell[24291, 628, 1242, 46, 498, "Output",ExpressionUUID->"7aa11f78-710e-426f-8a31-f85b3eceb59e"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
