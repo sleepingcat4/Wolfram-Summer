@@ -1,0 +1,86 @@
+Notebook[{Cell[
+BoxData[RowBox[{RowBox[{"otext"," ","="," ",RowBox[{"\"Artificial intelligence (AI) is intelligence demonstrated by computers, as opposed to human or animal intelligence. \"","Intelligence","\" encompasses the ability to learn and to reason, to generalize, and to infer meaning.AI applications include advanced web search engines (e.g., Google Search), recommendation systems (used by YouTube, Amazon, and Netflix), understanding human speech (such as Siri and Alexa), self-driving cars (e.g., Waymo), generative or creative tools (ChatGPT and AI art), automated decision-making, and competing at the highest level in strategic game systems (such as chess and Go).Artificial intelligence was founded as an academic discipline in 1956, and in the years since it has experienced several waves of optimism, followed by disappointment and the loss of funding (known as an \"","AI"," ","winter","\"), followed by new approaches, success, and renewed funding. AI research has tried and discarded many different approaches, including simulating the brain, modeling human problem solving, formal logic, large databases of knowledge, and imitating animal behavior. In the first decades of the 21st century, highly mathematical and statistical machine learning has dominated the field, and this technique has proved highly successful, helping to solve many challenging problems throughout industry and academia.The various sub-fields of AI research are centered around particular goals and the use of particular tools. The traditional goals of AI research include reasoning, knowledge representation, planning, learning, natural language processing, perception, and the ability to move and manipulate objects. General intelligence (the ability to solve an arbitrary problem) is among the field's long-term goals. To solve these problems, AI researchers have adapted and integrated a wide range of problem-solving techniques, including search and mathematical optimization, formal logic, artificial neural networks, and methods based on statistics, probability, and economics. AI also draws upon computer science, psychology, linguistics, philosophy, and many other fields.\nThe field was founded on the assumption that human intelligence \"","can"," ","be"," ","so"," ","precisely"," ","described"," ","that"," ","a"," ","machine"," ","can"," ","be"," ","made"," ","to"," ","simulate"," ","it","\". This raised philosophical arguments about the mind and the ethical consequences of creating artificial beings endowed with human-like intelligence; these issues have previously been explored by myth, fiction (science fiction), and philosophy since antiquity. Computer scientists and philosophers have since suggested that AI may become an existential risk to humanity if its rational capacities are not steered towards goals beneficial to humankind. Economists have frequently highlighted the risks of redundancies from AI, and speculated about unemployment if there is no adequate social policy for full employment. The term artificial intelligence has also been criticized for overhyping AI's true technological capabilities.\n\nArtificial beings with intelligence appeared as storytelling devices in antiquity, and have been common in fiction, as in Mary Shelley's Frankenstein or Karel \[CapitalCHacek]apek's R.U.R. These characters and their fates raised many of the same issues now discussed in the ethics of artificial intelligence.The study of mechanical or \"","formal","\" reasoning began with philosophers and mathematicians in antiquity. The study of mathematical logic led directly to Alan Turing's theory of computation, which suggested that a machine, by shuffling symbols as simple as \"","0","\" and \"","1","\", could simulate any conceivable act of mathematical deduction. This insight that digital computers can simulate any process of formal reasoning is known as the Church\[Dash]Turing thesis. This, along with concurrent discoveries in neurobiology, information theory and cybernetics, led researchers to consider the possibility of building an electronic brain. The first work that is now generally recognized as AI was McCullouch and Pitts' 1943 formal design for Turing-complete \"","artificial"," ","neurons","\".The field of AI research was born at a workshop at Dartmouth College in 1956. The attendees became the founders and leaders of AI research. They and their students produced programs that the press described as \"","astonishing","\": computers were learning checkers strategies, solving word problems in algebra, proving logical theorems and speaking English. \nBy the middle of the 1960s, research in the U.S. was heavily funded by the Department of Defense and laboratories had been established around the world.Researchers in the 1960s and the 1970s were convinced that their methods would eventually succeed in creating a machine with artificial general intelligence and considered this the goal of their field. Herbert \n\""}]}],";"}]],
+"Input",CellLabel -> "In[7]:= ",ExpressionUUID -> "85f80e84-82d5-4838-a7a2-3747c2bd0601"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"rareWordsFinder"," ","="," ","\n"," ",RowBox[{"LLMFunction","[","\n","  ",RowBox[
+{"\"Find rare words in the passage and put them in a list {\\\"word1\\\",...}:``\"",","," ","\"Expression\""}],"]"}]}]],
+"Input",CellChangeTimes -> {3892491791.7521343`,{3892491833.634383`,3892491848.1705737`},{3892492016.0271473`,3892492020.2011127`},{3892492076.8661637`,3892492078.306644`},{3892492115.241976`,3892492137.4066577`},{3892493298.709091`,3892493299.7551126`}},
+CellLabel -> "In[8]:= ",CellID -> 2042368754,ExpressionUUID -> "b5f66e27-bfe1-4ed0-afcf-564f146224c1"],Cell[
+BoxData[
+InterpretationBox[RowBox[{TagBox["LLMFunction","SummaryHead"],"[",DynamicModuleBox[
+{Set[Typeset`open$$,False],Set[Typeset`embedState$$,"Ready"]},TemplateBox[{PaneSelectorBox[
+{False -> GridBox[{{PaneBox[ButtonBox[DynamicBox[FEPrivate`FrontEndResource["FEBitmaps",
+"SummaryBoxOpener"]],RuleDelayed[ButtonFunction,Set[Typeset`open$$,True]],Appearance -> None,
+BaseStyle -> {},Evaluator -> Automatic,Method -> "Preemptive"],Alignment -> {Center,Center},
+ImageSize -> Dynamic[{Automatic,Times[3.5`,Times[CurrentValue["FontCapHeight"],Power[
+AbsoluteCurrentValue[Magnification],-1]]]}]],"",GridBox[{{RowBox[{TagBox["\"Content: \"",
+"SummaryItemAnnotation"],"\[InvisibleSpace]",TagBox[TagBox[TemplateBox[{"\"Find rare words in the passage and put them in a list {\\\"word1\\\",...}:\"",TemplateBox[
+{"1"},"TemplateSlot",DisplayFunction -> Function[FrameBox[Slot[1],Background -> RGBColor[
+0.945`,0.992`,1.`],BaselinePosition -> Baseline,BaseStyle -> {ShowStringCharacters -> True},
+FrameMargins -> {{2,2},{0,0}},FrameStyle -> RGBColor[0.698`,0.898`,0.9255`],RoundingRadius -> 3]],
+Tooltip -> Automatic]},"RowDefault"],Deploy,DefaultBaseStyle -> "Deploy"],"SummaryItem"]}]},{RowBox[
+{TagBox["\"Parameters: \"","SummaryItemAnnotation"],"\[InvisibleSpace]",TagBox[TemplateBox[
+{",","\",\"",StyleBox["1",ShowStringCharacters -> True,StripOnInput -> False]},"RowWithSeparators"],
+"SummaryItem"]}]}},GridBoxAlignment -> {"Columns" -> {{Left}},"Rows" -> {{Automatic}}},
+AutoDelete -> False,GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},
+GridBoxSpacings -> {"Columns" -> {{2}},"Rows" -> {{Automatic}}},BaseStyle -> {ShowStringCharacters -> False,NumberMarks -> False,PrintPrecision -> 3,ShowSyntaxStyles -> False}]}},
+GridBoxAlignment -> {"Columns" -> {{Left}},"Rows" -> {{Top}}},AutoDelete -> False,
+GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},BaselinePosition -> {1,1}],True -> GridBox[
+{{PaneBox[ButtonBox[DynamicBox[FEPrivate`FrontEndResource["FEBitmaps","SummaryBoxCloser"]],
+RuleDelayed[ButtonFunction,Set[Typeset`open$$,False]],Appearance -> None,BaseStyle -> {},
+Evaluator -> Automatic,Method -> "Preemptive"],Alignment -> {Center,Center},ImageSize -> Dynamic[
+{Automatic,Times[3.5`,Times[CurrentValue["FontCapHeight"],Power[AbsoluteCurrentValue[
+Magnification],-1]]]}]],"",GridBox[{{RowBox[{TagBox["\"Content: \"","SummaryItemAnnotation"],"\[InvisibleSpace]",TagBox[
+TagBox[TemplateBox[{"\"Find rare words in the passage and put them in a list {\\\"word1\\\",...}:\"",TemplateBox[
+{"1"},"TemplateSlot",DisplayFunction -> Function[FrameBox[Slot[1],Background -> RGBColor[
+0.945`,0.992`,1.`],BaselinePosition -> Baseline,BaseStyle -> {ShowStringCharacters -> True},
+FrameMargins -> {{2,2},{0,0}},FrameStyle -> RGBColor[0.698`,0.898`,0.9255`],RoundingRadius -> 3]],
+Tooltip -> Automatic]},"RowDefault"],Deploy,DefaultBaseStyle -> "Deploy"],"SummaryItem"]}]},{RowBox[
+{TagBox["\"Parameters: \"","SummaryItemAnnotation"],"\[InvisibleSpace]",TagBox[TemplateBox[
+{",","\",\"",StyleBox["1",ShowStringCharacters -> True,StripOnInput -> False]},"RowWithSeparators"],
+"SummaryItem"]}]},{RowBox[{TagBox["\"CombinerFunction: \"","SummaryItemAnnotation"],"\[InvisibleSpace]",TagBox[
+"StringJoin","SummaryItem"]}]},{RowBox[{TagBox["\"InsertionFunction: \"","SummaryItemAnnotation"],"\[InvisibleSpace]",TagBox[
+"TextString","SummaryItem"]}]}},GridBoxAlignment -> {"Columns" -> {{Left}},"Rows" -> {{Automatic}}},
+AutoDelete -> False,GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},
+GridBoxSpacings -> {"Columns" -> {{2}},"Rows" -> {{Automatic}}},BaseStyle -> {ShowStringCharacters -> False,NumberMarks -> False,PrintPrecision -> 3,ShowSyntaxStyles -> False}]}},
+GridBoxAlignment -> {"Columns" -> {{Left}},"Rows" -> {{Top}}},AutoDelete -> False,
+GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},BaselinePosition -> {1,1}]},
+Dynamic[Typeset`open$$],ImageSize -> Automatic]},"SummaryPanel"],RuleDelayed[DynamicModuleValues,
+{}],ExpressionUUID -> "82d157e4-8855-4ddf-a5d2-3d114098bbc3"],"]"}],LLMFunction[TemplateObject[
+{"Find rare words in the passage and put them in a list {\"word1\",...}:",TemplateSlot[
+1]},CombinerFunction -> StringJoin,InsertionFunction -> TextString,MetaInformation -> Association[]],
+"Expression",{}],Selectable -> False,Editable -> False,SelectWithContents -> True],
+StandardForm],"Output",CellLabel -> "Out[8]= ",ExpressionUUID -> "6c84d68a-ca09-4f8c-ab93-1b81e95cad66"]},
+Open],ExpressionUUID -> "728091ae-c2ab-4e16-9bdd-75af46e2b9a7"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"foundWords"," ","="," ","rareWordsFinder","[","otext","]"}]],
+"Input",CellLabel -> "In[9]:= ",ExpressionUUID -> "cbfe2008-869f-448c-8e02-86f16340426a"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"\"rare\"",",","\"passage\""}],"}"}],StandardForm],"Output",CellLabel -> "Out[9]= ",
+ExpressionUUID -> "f1d3cac1-6ba4-459a-8879-096b05ce19e1"]},Open],ExpressionUUID -> "8b0fdddd-ace0-4ff4-81f2-cd3369266fcb"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Column","@","foundWords"}]],"Input",CellLabel -> "In[10]:= ",
+ExpressionUUID -> "6e8e5f3b-8cb9-472a-a842-3b85c8850632"],Cell[
+BoxData[TagBox[GridBox[
+{{"\"rare\""},{"\"passage\""}},GridBoxAlignment -> {"Columns" -> {{Left}}},DefaultBaseStyle -> "Column",
+GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}}],"Column"],
+StandardForm],"Output",CellLabel -> "Out[10]= ",ExpressionUUID -> "f3f8fc10-e0fa-47cd-8f3c-ea8cf88b0940"]},
+Open],ExpressionUUID -> "b0ed60cc-25e1-46de-b401-bcc978a8c51a"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"WordCloud","[","foundWords","]"}]],"Input",CellLabel -> "In[11]:= ",
+ExpressionUUID -> "06c0487e-adf6-4a42-b973-f90bc891a715"],Cell[
+BoxData[GraphicsBox[
+{StyleBox[{InsetBox[BoxData[FormBox[StyleBox["\"passage\"",FontSize -> Scaled[0.2978723404255319`],
+FontColor -> RGBColor[0.368417`,0.506779`,0.709798`],StripOnInput -> False],TraditionalForm]],
+{0,0},Center,Automatic],InsetBox[BoxData[FormBox[StyleBox["\"rare\"",FontSize -> Scaled[
+0.2978723404255319`],FontColor -> RGBColor[0.880722`,0.611041`,0.142051`],StripOnInput -> False],
+TraditionalForm]],{4.5`,38.5`},Center,Automatic]},{{}},StripOnInput -> False]},PlotRange -> {{-116.`,119.`},{-42.`,51.`}},
+DefaultBaseStyle -> {"Graphics",FontFamily -> "Source Sans Pro"},Method -> CompressedData[
+"1:eJylUttKBDEMHVdFfBERn3zzG/wA2Ys3cGXYWXyvs6lbzDRDkoLz3f6A7YDuOpR5sdBy0iQnySHXb7Syh0VRyFF8np2onfxYq4BQXUawAGsC6oyC3xjuKu0Q5DQ6pkGpMerqQdLVLumBTbt1tTx5BTa1OvKj9U4ieAWWGMc3/fm6HYRcRLCOXB9LCgIlietZJ/usPVhzADmO4N6gQKbQnbVQq4w2lOZ8dO9bjFftwUhkqsRRDXLpf+A826cpyfl/cKWWFkwtOg/yd+6MVJYBLHEzDyzES9rArzgZ3hZNDQ14HeVNrX9WSbYpYsbXVcl8IT8scb7bjBJJM6v0Df+umJs="]],
+StandardForm],"Output",CellLabel -> "Out[11]= ",ExpressionUUID -> "d2bbba85-3d9d-4e90-9676-8d862afc4815"]},
+Open],ExpressionUUID -> "44a3af49-463b-4146-b71a-f7711425e7bc"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "13.3 for Wolfram Cloud 1.66 (June 16, 2023)"]

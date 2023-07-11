@@ -1,0 +1,295 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[     11271,        287]
+NotebookOptionsPosition[      9313,        251]
+NotebookOutlinePosition[      9725,        267]
+CellTagsIndexPosition[      9682,        264]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Crawling Wikipedia articles across 3 different genres, collecting 10 articles \
+per genre and compiling a dataset (.txt format) to analyse it for rare words \
+and NER (Name Entity Recognition) in those articles. \
+\>", "Text",
+ CellChangeTimes->{{3.8980225533112335`*^9, 
+  3.8980226841858225`*^9}},ExpressionUUID->"3f432f08-6242-45f4-a3ba-\
+e948d99b60bf"],
+
+Cell[CellGroupData[{
+
+Cell["Crawling Philosophy articles", "Section",
+ CellChangeTimes->{{3.8980235874366274`*^9, 
+  3.89802359873182*^9}},ExpressionUUID->"6cc369f9-e4cd-4443-ab2a-\
+3a1703be0dce"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"articleNames", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Metaphysics\>\"", ",", "\"\<Epistemology\>\"", ",", "\"\<Ethics\>\"",
+      ",", " ", "\"\<Logic\>\"", ",", " ", "\"\<Philosophy_of_mind\>\"", ",", 
+     " ", "\"\<Philosophy_of_science\>\"", ",", " ", 
+     "\"\<Philosophy_of_language\>\"", ",", " ", 
+     "\"\<Political_philosophy\>\"", ",", " ", "\"\<Aesthetics\>\"", ",", 
+     " ", "\"\<Existentialism\>\""}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.898022705669511*^9, 3.8980227072788196`*^9}, 
+   3.8980227806452026`*^9, {3.89802314981485*^9, 3.898023177619678*^9}, {
+   3.898023214790805*^9, 3.898023241960965*^9}, 3.8980232870724363`*^9, {
+   3.8980233343475747`*^9, 3.898023341869337*^9}, {3.8980233984513483`*^9, 
+   3.898023428935135*^9}, {3.898023461136612*^9, 3.8980234622605677`*^9}, {
+   3.8980235283516183`*^9, 3.8980235318653984`*^9}, 3.898023565368745*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"9b05c56c-ad51-43d0-b52a-29a75a7bfaac"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"articleData", "=", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{"articleNames", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"WikipediaData", "[", 
+        RowBox[{"#", ",", "\"\<ArticlePlaintext\>\""}], "]"}], "&"}], "/@", 
+      "articleNames"}]}], "]"}]}], ";"}]], "Input",
+ CellLabel->"In[2]:=",ExpressionUUID->"2d91b76d-03cb-4043-905e-be635517dff4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Get", " ", "the", " ", "directory", " ", "path", " ", "of", " ", "the", 
+    " ", "notebook"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"notebookDirectory", "=", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]}]], "Input",
+ CellLabel->"In[4]:=",ExpressionUUID->"d75a6544-43fb-4576-beb3-2a512a972f39"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Save", " ", "each", " ", "article", " ", "in", " ", "a", " ", 
+    RowBox[{"separate", ".", "txt"}], " ", "file"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"MapThread", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Export", "[", 
+        RowBox[{
+         RowBox[{"StringJoin", "[", 
+          RowBox[{
+          "notebookDirectory", ",", "\"\</\>\"", ",", "#1", ",", 
+           "\"\<.txt\>\""}], "]"}], ",", "#2", ",", "\"\<Text\>\""}], "]"}], 
+       "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"articleNames", ",", 
+        RowBox[{"Values", "[", "articleData", "]"}]}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.8980474685444703`*^9, 
+  3.8980474722449427`*^9}},ExpressionUUID->"05162ce6-0851-4cc2-b483-\
+26e6aff7159d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{
+        "notebookDirectory", ",", "\"\</Philosophy/\>\"", ",", "#1", ",", 
+         "\"\<.txt\>\""}], "]"}], ",", "#2", ",", "\"\<Text\>\""}], "]"}], 
+     "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"articleNames", ",", 
+      RowBox[{"Values", "[", "articleData", "]"}]}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.898047638466674*^9, 3.898047639758997*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"d7e139c7-2012-4b18-b832-773a3850bd70"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Crawling Scientific Articles", "Section",
+ CellChangeTimes->{{3.8980475172456355`*^9, 
+  3.898047528101165*^9}},ExpressionUUID->"7659265c-a6a1-4180-8b89-\
+93210d7c4d6b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"articleScience", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Scientific_method\>\"", ",", " ", "\"\<Newton's_laws_of_motion\>\"", 
+     ",", " ", "\"\<General_relativity\>\"", ",", " ", 
+     "\"\<Quantum_mechanics\>\"", ",", " ", "\"\<DNA\>\"", ",", " ", 
+     "\"\<Big_Bang\>\"", ",", " ", "\"\<Evolution\>\"", ",", " ", 
+     "\"\<Cell_theory\>\"", ",", " ", "\"\<Periodic_table\>\"", ",", " ", 
+     "\"\<Climate Change\>\""}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.898048160480837*^9, 3.8980481848951654`*^9}, {
+  3.898048237913323*^9, 3.8980482402464385`*^9}, {3.8980483179922523`*^9, 
+  3.8980483205019946`*^9}, {3.8980483763207293`*^9, 3.898048379598804*^9}, {
+  3.898048413385373*^9, 3.8980484142489634`*^9}, {3.8980489067279243`*^9, 
+  3.8980489528389454`*^9}, {3.898049019336713*^9, 3.8980490220225196`*^9}, {
+  3.898049070521217*^9, 3.8980490843121824`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"841ddc97-50fc-423b-90b8-dd3c94c28e2d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"articleData", "=", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{"articleScience", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"WikipediaData", "[", 
+        RowBox[{"#", ",", "\"\<ArticlePlaintext\>\""}], "]"}], "&"}], "/@", 
+      "articleScience"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.898049099741912*^9, 3.8980491205709114`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"664d64d8-121f-4f99-9e29-45f616a827f1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"notebookDirectory", "=", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]], "Input",
+ CellLabel->"In[9]:=",ExpressionUUID->"57ebcd2e-e3e5-47f9-bea3-5b1735a6515c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{
+        "notebookDirectory", ",", "\"\</Science/\>\"", ",", "#1", ",", 
+         "\"\<.txt\>\""}], "]"}], ",", "#2", ",", "\"\<Text\>\""}], "]"}], 
+     "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"articleScience", ",", 
+      RowBox[{"Values", "[", "articleData", "]"}]}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8980491439030704`*^9, 3.898049155161173*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"27e13458-7a8d-45a6-801f-139c9ea18221"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Crawling Cognitive Science Articles", "Section",
+ CellChangeTimes->{{3.898049277510006*^9, 3.898049279734088*^9}, {
+  3.898053101790098*^9, 
+  3.8980531132061987`*^9}},ExpressionUUID->"3e6ad401-9aa7-4fd5-9ab3-\
+2ba12faade52"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"articleCognitive", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Cognitive_science\>\"", ",", " ", "\"\<Cognition\>\"", ",", " ", 
+     "\"\<Artificial_intelligence\>\"", ",", " ", "\"\<Neuroscience\>\"", ",",
+      " ", "\"\<Psychology\>\"", ",", " ", "\"\<Perception\>\"", ",", " ", 
+     "\"\<Memory\>\"", ",", " ", "\"\<Language_acquisition\>\"", ",", " ", 
+     "\"\<Attention\>\"", ",", " ", "\"\<Decision-making\>\""}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8980531206787653`*^9, 3.8980531954708376`*^9}, {
+   3.8980532409119625`*^9, 3.8980533535662174`*^9}, 3.8980538831263103`*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"258edb1c-3082-4a29-aade-8c226affc146"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"articleData", "=", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{"articleCognitive", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"WikipediaData", "[", 
+        RowBox[{"#", ",", "\"\<ArticlePlaintext\>\""}], "]"}], "&"}], "/@", 
+      "articleCognitive"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8980538578363543`*^9, 3.8980538887650795`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"3f88fe3e-e03f-4398-a8f5-9a2f3dbb253b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"notebookDirectory", "=", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]], "Input",
+ CellLabel->"In[16]:=",ExpressionUUID->"ed1901da-e538-483b-a344-493b648229c0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{
+        "notebookDirectory", ",", "\"\</Cognitive Science/\>\"", ",", "#1", 
+         ",", "\"\<.txt\>\""}], "]"}], ",", "#2", ",", "\"\<Text\>\""}], 
+      "]"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"articleCognitive", ",", 
+      RowBox[{"Values", "[", "articleData", "]"}]}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8980539572057924`*^9, 3.898053978691931*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"be546efb-59a4-4b45-9aab-cbee57b1be50"]
+}, Open  ]]
+},
+WindowSize->{808.1999999999999, 568.8},
+WindowMargins->{{36, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 8, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3dc4874e-ddb4-42d1-a662-29f84d2817ba"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 366, 7, 58, "Text",ExpressionUUID->"3f432f08-6242-45f4-a3ba-e948d99b60bf"],
+Cell[CellGroupData[{
+Cell[952, 31, 174, 3, 67, "Section",ExpressionUUID->"6cc369f9-e4cd-4443-ab2a-3a1703be0dce"],
+Cell[1129, 36, 1007, 17, 67, "Input",ExpressionUUID->"9b05c56c-ad51-43d0-b52a-29a75a7bfaac"],
+Cell[2139, 55, 400, 10, 48, "Input",ExpressionUUID->"2d91b76d-03cb-4043-905e-be635517dff4"],
+Cell[2542, 67, 377, 9, 48, "Input",ExpressionUUID->"d75a6544-43fb-4576-beb3-2a512a972f39"],
+Cell[2922, 78, 883, 24, 105, "Input",ExpressionUUID->"05162ce6-0851-4cc2-b483-26e6aff7159d"],
+Cell[3808, 104, 628, 17, 48, "Input",ExpressionUUID->"d7e139c7-2012-4b18-b832-773a3850bd70"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4473, 126, 175, 3, 67, "Section",ExpressionUUID->"7659265c-a6a1-4180-8b89-93210d7c4d6b"],
+Cell[4651, 131, 1004, 17, 67, "Input",ExpressionUUID->"841ddc97-50fc-423b-90b8-dd3c94c28e2d"],
+Cell[5658, 150, 472, 11, 48, "Input",ExpressionUUID->"664d64d8-121f-4f99-9e29-45f616a827f1"],
+Cell[6133, 163, 201, 4, 28, "Input",ExpressionUUID->"57ebcd2e-e3e5-47f9-bea3-5b1735a6515c"],
+Cell[6337, 169, 630, 17, 48, "Input",ExpressionUUID->"27e13458-7a8d-45a6-801f-139c9ea18221"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7004, 191, 231, 4, 67, "Section",ExpressionUUID->"3e6ad401-9aa7-4fd5-9ab3-2ba12faade52"],
+Cell[7238, 197, 726, 13, 67, "Input",ExpressionUUID->"258edb1c-3082-4a29-aade-8c226affc146"],
+Cell[7967, 212, 479, 11, 48, "Input",ExpressionUUID->"3f88fe3e-e03f-4398-a8f5-9a2f3dbb253b"],
+Cell[8449, 225, 202, 4, 83, "Input",ExpressionUUID->"ed1901da-e538-483b-a344-493b648229c0"],
+Cell[8654, 231, 643, 17, 48, "Input",ExpressionUUID->"be546efb-59a4-4b45-9aab-cbee57b1be50"]
+}, Open  ]]
+}
+]
+*)
+
