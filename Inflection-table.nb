@@ -1,0 +1,34 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{RowBox[{RowBox[{"grid"," ","="," ",RowBox[
+{"Grid","[",RowBox[{RowBox[{"{",RowBox[{"{",RowBox[{"LLMSynthesize","[","\"Write a table of inflection in French\"","]"}],"}"}],"}"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","All"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],"grid"}],"Input",
+CellLabel -> "In[5]:= ",ExpressionUUID -> "db410cb9-8bb1-4ef8-aa46-a20b9e785df0"],Cell[
+BoxData[
+TagBox[GridBox[{{"\"Verb: parler (to speak)\\n\\nPerson  | Present Tense | Past Tense (Pass\[EAcute] Compos\[EAcute]) | Future Tense\\n--------|--------------|--------------------------|--------------\\nJe      | parle        | ai parl\[EAcute]                 | parlerai\\nTu      | parles       | as parl\[EAcute]                 | parleras\\nIl/Elle | parle        | a parl\[EAcute]                  | parlera\\nNous    | parlons      | avons parl\[EAcute]             | parlerons\\nVous    | parlez       | avez parl\[EAcute]              | parlerez\\nIls/Elles | parlent     | ont parl\[EAcute]                | parleront\""}},
+AutoDelete -> False,GridBoxFrame -> {"Columns" -> {{True}},"Rows" -> {{True}}},GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}}],
+"Grid"],StandardForm],"Output",CellLabel -> "Out[6]= ",ExpressionUUID -> "43b5e93d-3789-41b0-8b29-6a0fe16e4d26"]},
+Open],ExpressionUUID -> "949a61ed-f9fa-46ac-a547-9fc7ffd053b1"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"grid"," ","="," ",RowBox[{"Grid","[",RowBox[{RowBox[
+{"{",RowBox[{"{",RowBox[{"LLMSynthesize","[","\"Write a table of inflection in Latin\"","]"}],"}"}],"}"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","All"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[{"grid","\n"}]}],
+"Input",CellLabel -> "In[7]:= ",ExpressionUUID -> "23248d7f-efe6-4749-82a8-0f7e49d8d0e2"],Cell[
+BoxData[
+TagBox[GridBox[{{"\"Here is a table of inflections in Latin:\\n\\nCase          | Singular | Plural\\n------------- | --------- | -------\\nNominative    | -us       | -i\\nGenitive      | -i        | -orum\\nDative        | -o        | -is\\nAccusative    | -um       | -os\\nAblative      | -o        | -is\\nVocative      | -e        | -i\\n\\nThese inflections indicate the different forms that nouns, pronouns, and adjectives can take depending on their grammatical function in a sentence. The table presents the inflections for the first declension in Latin, which includes many feminine nouns. Other declensions and genders have different inflections.\\n\\nFor example, the word \\\"rosa\\\" (rose) would have the following inflections:\\n\\n- Nominative Singular: rosa\\n- Genitive Singular: rosae\\n- Dative Singular: rosae\\n- Accusative Singular: rosam\\n- Ablative Singular: rosa\\n- Vocative Singular: rosa\\n\\nAnd in the plural:\\n\\n- Nominative Plural: rosae\\n- Genitive Plural: rosarum\\n- Dative Plural: rosis\\n- Accusative Plural: rosas\\n- Ablative Plural: rosis\\n- Vocative Plural: rosae\\n\\nThese inflections allow for the clear identification of the grammatical role of each word in a sentence and are essential for understanding the structure of Latin sentences.\""}},
+AutoDelete -> False,GridBoxFrame -> {"Columns" -> {{True}},"Rows" -> {{True}}},GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}}],
+"Grid"],StandardForm],"Output",CellLabel -> "Out[8]= ",ExpressionUUID -> "516c0c6a-525d-48a5-b6ee-7094f1e1b6e7"]},
+Open],ExpressionUUID -> "c71fbc25-a811-4e9c-ad8f-2d9be191134c"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"grid"," ","="," ",RowBox[{"Grid","[",RowBox[{RowBox[
+{"{",RowBox[{"{",RowBox[{"LLMSynthesize","[","\"Write a table of inflection in Hebrew\"","]"}],"}"}],"}"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","All"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[{"grid","\n"}]}],
+"Input",CellLabel -> "In[9]:= ",ExpressionUUID -> "ecac8a62-7258-48b1-9cec-95a139c05ba7"],Cell[
+BoxData[
+TagBox[GridBox[{{"\"Here is a table of inflection in Hebrew:\\n\\nNoun Inflection:\\n------------------\\nSingular    |    Plural\\n------------------\\nMasculine   |   \:05e1\:05b4\:05e0\:05b0\:05d2\:05d5\:05b9\:05dc   |  \:05e8\:05b8\:05d1\:05b4\:05d9\:05dd\\nFeminine   |    \:05e1\:05b4\:05e0\:05b0\:05d2\:05d5\:05b9\:05ea   |  \:05e8\:05d5\:05b9\:05d1\:05d5\:05b9\:05ea\\n\\nVerb Inflection:\\n------------------\\nPast Tense         |     Present Tense     |     Future Tense\\n------------------\\n1st Person         |    \:05d3\:05b4\:05bc\:05d1\:05b7\:05bc\:05e8\:05b0\:05ea\:05b4\:05bc\:05d9       |     \:05d0\:05d5\:05b9\:05de\:05b5\:05e8       |    \:05d0\:05b2\:05d3\:05b7\:05d1\:05b5\:05bc\:05e8\\n2nd Person (Mas.) |    \:05d3\:05b4\:05bc\:05d1\:05b7\:05bc\:05e8\:05b0\:05ea\:05b8\:05bc        |     \:05d0\:05b7\:05ea\:05b8\:05bc\:05d4 \:05d0\:05d5\:05b9\:05de\:05b5\:05e8   |    \:05ea\:05b0\:05bc\:05d3\:05b7\:05d1\:05b5\:05bc\:05e8\\n2nd Person (Fem.) |    \:05d3\:05b4\:05bc\:05d1\:05b7\:05bc\:05e8\:05b0\:05ea\:05b8\:05bc        |     \:05d0\:05b7\:05ea\:05b0\:05bc \:05d0\:05d5\:05b9\:05de\:05b6\:05e8\:05b6\:05ea   |    \:05ea\:05b0\:05bc\:05d3\:05b7\:05d1\:05b0\:05bc\:05e8\:05b4\:05d9\\n3rd Person (Mas.) |    \:05d3\:05b4\:05bc\:05d1\:05b5\:05bc\:05e8            |     \:05d4\:05d5\:05bc\:05d0 \:05d0\:05d5\:05b9\:05de\:05b5\:05e8    |    \:05d9\:05b0\:05d3\:05b7\:05d1\:05b5\:05bc\:05e8\\n3rd Person (Fem.) |    \:05d3\:05b4\:05bc\:05d1\:05b6\:05bc\:05e8\:05b8\:05d4          |     \:05d4\:05b4\:05d9\:05d0 \:05d0\:05d5\:05b9\:05de\:05b6\:05e8\:05b6\:05ea  |    \:05ea\:05b0\:05bc\:05d3\:05b7\:05d1\:05b0\:05bc\:05e8\:05b4\:05d9\\n\\nAdjective Inflection:\\n------------------\\nMasculine (Singular)  |   Feminine (Singular)   |   Masculine (Plural)   |   Feminine (Plural)\\n------------------\\n\:05d2\:05b8\:05bc\:05d3\:05d5\:05b9\:05dc                  |  \:05d2\:05b0\:05bc\:05d3\:05d5\:05b9\:05dc\:05b8\:05d4                   |  \:05d2\:05b0\:05bc\:05d3\:05d5\:05b9\:05dc\:05b4\:05d9\:05dd                   |   \:05d2\:05b0\:05bc\:05d3\:05d5\:05b9\:05dc\:05d5\:05b9\:05ea\\nSmall (Singular)         |   Small (Singular)        |   Small (Plural)           |   Small (Plural)\\n\\nNote: The Hebrew language has complex grammar rules and various exceptions to these inflections. This table provides a general overview, but it is always best to consult a comprehensive Hebrew grammar book or reference for more detailed information.\""}},
+AutoDelete -> False,GridBoxFrame -> {"Columns" -> {{True}},"Rows" -> {{True}}},GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}}],
+"Grid"],StandardForm],"Output",CellLabel -> "Out[10]= ",ExpressionUUID -> "974b355e-bfb1-4808-bd86-a0b3e19279c8"]},
+Open],ExpressionUUID -> "d98d4d2c-fb73-493b-9b28-5a25a5be4402"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "13.3 for Wolfram Cloud 1.66 (June 16, 2023)"]
