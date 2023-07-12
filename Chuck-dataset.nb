@@ -1,0 +1,161 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      5521,        153]
+NotebookOptionsPosition[      4950,        136]
+NotebookOutlinePosition[      5385,        153]
+CellTagsIndexPosition[      5342,        150]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Set", " ", "the", " ", "directory", " ", "path", " ", "where", " ", 
+    RowBox[{"the", ".", "txt"}], " ", "files", " ", "are", " ", "located"}], 
+   "*)"}], 
+  RowBox[{
+   RowBox[{
+   "directoryPath", "=", 
+    "\"\<F:\\\\CS\\\\Wolfram Fellowship\\\\Science\>\""}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.898126949591034*^9, 3.898126949591034*^9}, {
+  3.898126987218229*^9, 3.898126994061836*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"676213e1-558b-4b19-9654-2f0ba421f486"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Get", " ", "a", " ", "list", " ", "of", " ", 
+    RowBox[{"all", ".", "txt"}], " ", "files", " ", "in", " ", "the", " ", 
+    "directory"}], "*)"}], 
+  RowBox[{
+   RowBox[{"fileList", "=", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{"\"\<*.txt\>\"", ",", "directoryPath"}], "]"}]}], 
+   ";"}]}]], "Input",
+ CellChangeTimes->{{3.8981270170522633`*^9, 3.8981270170522633`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"be64b10f-e7ed-4790-9dd8-e643b5ae4394"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Create", " ", "a", " ", "new", " ", "directory", " ", "to", " ", "store", 
+    " ", "the", " ", "sliced", " ", "files"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"newDirectoryPath", "=", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"directoryPath", ",", "\"\<Science Chuck\>\""}], "}"}], 
+      "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"CreateDirectory", "[", "newDirectoryPath", "]"}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Loop", " ", "through", " ", 
+     RowBox[{"each", ".", "txt"}], " ", "file"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Do", "[", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Read", " ", "the", " ", "content", " ", "of", " ", "the", " ", "file"}],
+      "*)"}], 
+    RowBox[{
+     RowBox[{
+      RowBox[{"fileContent", "=", 
+       RowBox[{"Import", "[", 
+        RowBox[{"file", ",", "\"\<Text\>\""}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{
+        "Split", " ", "the", " ", "content", " ", "into", " ", "400"}], "-", 
+        RowBox[{"word", " ", "chunks"}]}], "*)"}], 
+      RowBox[{"chunkList", "=", 
+       RowBox[{"Partition", "[", 
+        RowBox[{
+         RowBox[{"StringSplit", "[", 
+          RowBox[{"fileContent", ",", "\"\< \>\""}], "]"}], ",", "400"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Loop", " ", "through", " ", "each", " ", "chunk", " ", "and", " ", 
+        "save", " ", "as", " ", 
+        RowBox[{"separate", ".", "txt"}], " ", "files"}], "*)"}], 
+      RowBox[{"Do", "[", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Generate", " ", "the", " ", "new", " ", "file", " ", "name"}], 
+        "*)"}], 
+       RowBox[{
+        RowBox[{
+         RowBox[{"newFileName", "=", 
+          RowBox[{"StringJoin", "[", 
+           RowBox[{
+            RowBox[{"FileBaseName", "[", "file", "]"}], ",", "\"\<_\>\"", ",", 
+            RowBox[{"ToString", "[", "i", "]"}], ",", "\"\<.txt\>\""}], 
+           "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"(*", 
+          RowBox[{
+          "Join", " ", "the", " ", "words", " ", "in", " ", "the", " ", 
+           "chunk", " ", "and", " ", "save", " ", "as", " ", "a", " ", "new", 
+           " ", "file"}], "*)"}], 
+         RowBox[{"Export", "[", 
+          RowBox[{
+           RowBox[{"FileNameJoin", "[", 
+            RowBox[{"{", 
+             RowBox[{"newDirectoryPath", ",", "newFileName"}], "}"}], "]"}], 
+           ",", 
+           RowBox[{"StringJoin", "[", 
+            RowBox[{"Riffle", "[", 
+             RowBox[{
+              RowBox[{"chunkList", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< \>\""}], "]"}], 
+            "]"}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "[", "chunkList", "]"}]}], "}"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"file", ",", "fileList"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.898127040552107*^9, 3.898127040552107*^9}, {
+  3.8981272500817437`*^9, 3.898127259691119*^9}, {3.8981273315186033`*^9, 
+  3.898127332643602*^9}, {3.8981278497720294`*^9, 3.8981278751809874`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"5251ab96-92f4-4373-8e03-cc15cdf2ea49"]
+},
+WindowSize->{1152, 579.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 8, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f8850bba-4209-4b57-8ab2-44a54f20e5b9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 536, 13, 28, "Input",ExpressionUUID->"676213e1-558b-4b19-9654-2f0ba421f486"],
+Cell[1100, 35, 507, 12, 28, "Input",ExpressionUUID->"be64b10f-e7ed-4790-9dd8-e643b5ae4394"],
+Cell[1610, 49, 3336, 85, 274, "Input",ExpressionUUID->"5251ab96-92f4-4373-8e03-cc15cdf2ea49"]
+}
+]
+*)
+
